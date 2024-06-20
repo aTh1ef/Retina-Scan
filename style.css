@@ -1,0 +1,795 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* TRANSITION */
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+/* SECTIONS */
+
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+/* PROFILE SECTION */
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+  background-image: url('./assets/eye-bg.jpg'); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  padding: 1rem; /* Added padding to avoid content touching the edges */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+
+}
+
+#profile .section__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: #f0f0f0; /* Light color for text */
+  text-shadow: 
+    -2px -2px 0 #000,  
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000; /* Increased spread for stronger 3D effect */
+  max-width: 90vw; /* Ensure content stays within the viewport width */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+#profile .section__text p {
+  font-weight: 600;
+  color: #f0f0f0; /* Light color for text */
+}
+
+#profile .section__text__p1,
+#profile .section__text__p2,
+#profile .title {
+  text-align: center;
+  color: #f0f0f0; /* Light color for text */
+}
+
+#profile .section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+#profile .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White color for title */
+}
+
+@media (max-width: 767px) {
+  #profile {
+    height: 80vh; /* Keep the height fixed to maintain the background image visibility */
+    padding: 1rem; /* Maintain padding */
+  }
+
+  #profile .section__text {
+    padding: 1rem; /* Adjust padding for mobile view */
+    margin-top: 4rem; /* Add margin to move content down */
+  }
+  
+  
+}
+
+
+/* ICONS */
+
+#profile .icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+  color: #f0f0f0; /* Light color for button text */
+  background: rgba(0, 101, 155, 0.8); /* Semi-transparent blue background */
+  border: #f0f0f0 0.1rem solid; /* Light border color */
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #0b84e4; /* Darker blue background on hover */
+  color: #f0f0f0; /* Light text color on hover */
+  border-color: #0b84e4; /* Darker blue border color on hover */
+}
+
+.btn-color-1 {
+  background: rgba(0, 101, 155, 0.8); /* Light blue background */
+}
+
+.btn-color-1:hover {
+  background: #0b84e4; /* Darker blue background on hover */
+  border-color: #0b84e4; /* Darker blue border color on hover */
+}
+
+.btn-color-2 {
+  background: rgba(0, 101, 155, 0.8); /* Light blue background */
+}
+
+.btn-color-2:hover {
+  background: #0b84e4; /* Darker blue background on hover */
+  border-color: #0b84e4; /* Darker blue border color on hover */
+}
+
+
+#profile .btn-container {
+  gap: 1rem;
+}
+
+
+
+/* ICONS */
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* ABOUT SECTION */
+
+/* ABOUT SECTION */
+.about-section-container {
+  margin-top: 5rem; /* Add a top margin of 4rem (adjust as needed) */
+  margin-bottom: -3rem;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center the text within the section */
+  padding: 2rem;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 800px; /* Set a maximum width for all screens */
+  padding: 1rem; /* Default padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+  border-radius: 1rem;
+  background: white;
+}
+
+.about-containers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.about-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the containers */
+  gap: 2rem;
+  width: 100%; /* Ensure full width */
+}
+
+.details-container {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+  flex: 1;
+  width: 100%;
+  max-width: 300px; /* Ensure the containers are square */
+  aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.icon.arrow {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .icon.arrow {
+    display: block; /* Show the arrow icon */
+  }
+
+  /* Hide arrow icon specifically in #contact section */
+  body.contact-visible .icon.arrow {
+    display: none;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .intro-text {
+    width: 300px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Adjust padding as needed */
+  }
+  .about-details-container {
+    margin-left: -1.5rem; /* Adjust the negative value as needed */
+  }
+}
+
+@media (min-width: 768px) {
+  .about-containers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-details-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .details-container {
+    flex: 1;
+    max-width: 300px; /* Ensure the containers are square */
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+  }
+}
+/* EXPERIENCE SECTION */
+
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* Ensure the services-container has a top margin */
+.services-container {
+  margin-top: 13rem; /* Adjust the margin as needed */
+}
+
+/* Ensure the #services section has central alignment for its contents */
+#services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central alignment for experience details container */
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem; /* Add space between the containers */
+  flex-wrap: wrap; /* Ensure wrapping for smaller screens */
+}
+
+/* Ensure the containers are centrally aligned */
+.service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Central align the text within the container */
+  background-color: rgb(250, 250, 250); /* Ensure correct background color */
+  border: 1px solid rgb(163, 163, 163); /* Border color */
+  padding: 1rem; /* Padding for better spacing */
+  border-radius: 1rem; /* Border radius for rounded corners */
+  width: 300px; /* Increased width for better content fit */
+   /* Fixed height for containers */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Center align the images within the containers */
+.article-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: auto; /* Maintain aspect ratio */
+  height: 200px; /* Fixed height for equal size */
+  max-width: 100%;
+  display: block;
+  margin: 0 auto; /* Center align the image */
+}
+
+/* Ensure buttons are wrapped within the container */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* Space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  width: 100%;
+}
+
+.project-btn {
+  color: black;
+  border-color: rgb(163, 163, 163);
+  padding: 0.5rem 1rem; /* Padding for the buttons */
+  flex: 1 1 auto; /* Allow buttons to grow and shrink */
+  max-width: calc(50% - 1rem); /* Ensure buttons take up half width minus margin */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .services-container {
+    margin-top: 3rem; /* Margin for mobile view */
+  }
+}
+
+ 
+/* CONTACT */
+.contact-container {
+  margin-top: 8.6rem; /* Add a top margin of 4rem (adjust as needed) */
+  margin-bottom: -100rem;
+}
+
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+}
+
+.email-icon {
+  height: 2.5rem;
+}
+
+#contact .section__text__p1{
+text-align: center;
+}
+@media (max-width: 768px) {
+  .contact-container {
+    margin-top: 2rem; /* Margin for mobile view */
+  }
+}
+
+/* FOOTER SECTION */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+
+
+#diabetic-retinopathy .text-container {
+  text-align: left; /* Set text to the left */
+}
+
+#diabetic-retinopathy .text-container {
+  padding: 20px; /* Add padding for better spacing */
+}
+
+
+.blue-heading {
+  color: rgb(7, 191, 252);
+}
+
+.blue-text {
+  color: rgb(7, 191, 252);
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.red-heading {
+  color: red;
+}
+
+.text-container ul {
+  list-style-type: none;
+}
+
+
+
+.text-container ul {
+  list-style-type: none;
+}
+
+.experience-details-container {
+  width: 100%; /* Maintain full width */
+  max-width: 200px; /* Set a maximum width */
+ 
+  padding: 10px; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+.icon.arrow {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+}
+
+
+
+
+.experience-details-container {
+  width: 100%; /* Maintain full width */
+  max-width: 300px; /* Set a maximum width */
+  padding: 20px; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+  margin-top: 50px; /* Adjust the top margin as needed */
+  margin-left: calc(50% - 170px); /* Align the container more to the left */
+  margin-right: auto; /* Align the container to the right */
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* CSS for left container */
+.left-container {
+  float: left;
+  width: 45%; /* Adjust the width to your preference */
+  margin-right: 5%; /* Add margin to create space between containers */
+}
+
+/* CSS for right container */
+.right-container {
+  float: right;
+  width: 45%; /* Adjust the width to your preference */
+  margin-left: 5%; /* Add margin to create space between containers */
+}
+
+
+/*newwwwwwwwwwwwwwwwwwwwwabouttttttttttttttt */
+
+
+/* Adjustments for About Us Section */
+#about {
+  padding: 4vh 0;
+  margin: 0 10rem;
+}
+
+.section-container {
+  display: flex;
+  align-items: center;
+}
+
+.section__pic-container {
+  flex: 1;
+  max-width: 50%;
+}
+
+.section__pic-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-details-container {
+  flex: 1;
+}
+
+.about-containers {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.details-container {
+  flex: 1;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+}
+
+.text-container {
+  padding: 20px;
+  text-align: left;
+}
+
+/* Adjustments for Image Container */
+.about-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+/*newwwwwwwwwwwwwwwwwwwwwabouttttttttttttttt */
+
+.title {
+  text-align: center;
+}
+
+
+
+/* Style for Warning Signs and Taking Control boxes */
+.warning-signs, .taking-control {
+  flex: 1;
+  padding: 20px;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.warning-signs, .taking-control {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .warning-signs, .taking-control {
+    margin-right: 0;
+  }
+}
+
+
+.button-container {
+  text-align: center; /* Center align the button */
+  margin-top: 20px; /* Add some space between the content and the button */
+}
+
+.learn-button {
+  background-color: #255a80; /* Choose your desired button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.learn-button:hover {
+  background-color: #868686; /* Darker shade on hover */
+}
+
+.small-text {
+  font-size: 12px; /* Adjust font size for small text */
+}
+
+.developer {
+  font-size: 12px; /* Adjust font size for small text */
+}
+
+.footer-content .developer {
+  color: rgb(127, 22, 143); /* Blue color for developer name */
+  font-size: 12px; /* Adjust font size for developer name */
+}
